@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --color-champagne: #C5A059;
+  --color-champagne-light: #DFBE7D;
+  --color-champagne-dark: #8F7239;
+  
+  --color-bg-base: #080808;
+  --color-bg-surface: #111111;
+  --color-bg-elevated: #161616;
+  --color-border-subtle: #222222;
+  --color-border-gold: rgba(197, 160, 89, 0.25);
+  
+  --color-text-primary: #F5F3EF;
+  --color-text-secondary: #9E9C96;
+  --color-text-muted: #66645E;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #080808;
+  color: #F5F3EF;
+  overflow-x: hidden;
+}
+
+.font-cinzel {
+  font-family: var(--font-display);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* ==========================================================================
+   Image & Media Protection Rules
+   Prevents context menu, long-press callout, drag-and-drop, and selection
+   ========================================================================== */
+img,
+.protected-media {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+
+/* Prevent unwanted callout/selection on photo and poster containers */
+.protected-container {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
