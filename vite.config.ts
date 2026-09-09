@@ -48,7 +48,7 @@ function profilePhotoSyncPlugin(): Plugin {
 
 export default defineConfig(() => {
   return {
-    base: './',
+    base: '/sahil-jaiswal-portfolio/',
     plugins: [react(), tailwindcss(), profilePhotoSyncPlugin()],
     resolve: {
       alias: {
