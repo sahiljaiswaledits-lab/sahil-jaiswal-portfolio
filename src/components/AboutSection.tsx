@@ -12,7 +12,7 @@ export const AboutSection: React.FC = () => {
     } catch {
       // ignore
     }
-    return PERSONAL_INFO.profilePhoto || '/assets/profile/sahil-jaiswal.jpg';
+    return PERSONAL_INFO.profilePhoto || './assets/profile/sahil-jaiswal.jpg';
   });
 
   // Background sync once to permanent static storage on server if user had uploaded during earlier session

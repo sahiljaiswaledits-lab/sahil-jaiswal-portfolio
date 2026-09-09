@@ -48,6 +48,7 @@ function profilePhotoSyncPlugin(): Plugin {
 
 export default defineConfig(() => {
   return {
+    base: './',
     plugins: [react(), tailwindcss(), profilePhotoSyncPlugin()],
     resolve: {
       alias: {

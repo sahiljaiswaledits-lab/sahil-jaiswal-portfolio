@@ -14,7 +14,7 @@ export const PERSONAL_INFO: PersonalInfo = {
   // WhatsApp phone number
   whatsappNumber: "+91 7052434134",
   // Fixed profile photo asset
-  profilePhoto: "/assets/profile/sahil-jaiswal.jpg",
+  profilePhoto: "./assets/profile/sahil-jaiswal.jpg",
 };
 
 // ============================================================================
