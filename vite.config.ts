@@ -47,8 +47,12 @@ function profilePhotoSyncPlugin(): Plugin {
 }
 
 export default defineConfig(() => {
+  // Use root '/' for Vercel deployments, and subpath '/sahil-jaiswal-portfolio/' for GitHub Pages
+  const isVercel = Boolean(process.env.VERCEL);
+  const base = isVercel ? '/' : (process.env.BASE_PATH || '/sahil-jaiswal-portfolio/');
+
   return {
-    base: '/sahil-jaiswal-portfolio/',
+    base,
     plugins: [react(), tailwindcss(), profilePhotoSyncPlugin()],
     resolve: {
       alias: {
