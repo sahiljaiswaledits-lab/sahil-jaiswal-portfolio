@@ -4,28 +4,13 @@ import { Mail, Instagram, MessageSquare } from 'lucide-react';
 import { PERSONAL_INFO, getWhatsAppUrl } from '../data/portfolioData.ts';
 
 export const AboutSection: React.FC = () => {
-  // Fixed website asset - preserves continuity for Sahil's current session
-  const [photoSrc] = useState<string>(() => {
-    try {
-      const saved = localStorage.getItem('sahil_profile_photo');
-      if (saved) return saved;
-    } catch {
-      // ignore
-    }
-    return PERSONAL_INFO.profilePhoto || `${import.meta.env.BASE_URL}assets/profile/sahil-jaiswal.jpg`;
-  });
+  // Official verified profile photo asset
+  const photoSrc = PERSONAL_INFO.profilePhoto || `${import.meta.env.BASE_URL}assets/profile/sahil-jaiswal-profile.jpg`;
 
-  // Background sync once to permanent static storage on server if user had uploaded during earlier session
+  // Clean up any legacy localStorage entries so they never override the official asset
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('sahil_profile_photo');
-      if (saved && saved.startsWith('data:image')) {
-        fetch('/api/sync-profile-photo', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ image: saved }),
-        }).catch(() => {});
-      }
+      localStorage.removeItem('sahil_profile_photo');
     } catch {
       // ignore
     }

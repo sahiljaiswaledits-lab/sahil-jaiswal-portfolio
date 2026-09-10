@@ -24,6 +24,7 @@ function profilePhotoSyncPlugin(): Plugin {
                 if (!fs.existsSync(targetDir)) {
                   fs.mkdirSync(targetDir, { recursive: true });
                 }
+                fs.writeFileSync(path.join(targetDir, 'sahil-jaiswal-profile.jpg'), buffer);
                 fs.writeFileSync(path.join(targetDir, 'sahil-jaiswal.jpg'), buffer);
                 fs.writeFileSync(path.join(targetDir, 'sahil-jaiswal.png'), buffer);
                 res.statusCode = 200;
